@@ -31,20 +31,18 @@ def get_combined_data():
         combined_data = []
         total_random_numbers = 0
 
-        for quiz_item in all_quiz_data:
-            random_number = random.randint(1, 100)  # สุ่มตัวเลข
+        for _ in range(2):
+            quiz_item = random.choice(all_quiz_data)
+            random_number = random.randint(1, 100)
 
-            # เลือกข้อมูลจาก collection "x" และเพิ่มใน combined_item
             x_item = random.choice(all_x_data)
             combined_item = f"{x_item['x1']} {quiz_item['name']} {random_number} {quiz_item['unit']}"
 
             combined_data.append(combined_item)
             total_random_numbers += random_number
 
-        # สุ่มออกมา 2 ตัวอย่าง
-        sampled_data = random.sample(combined_data, min(2, len(combined_data)))
-
         # ส่งข้อมูลไปยัง template
+        sampled_data = random.sample(combined_data, min(2, len(combined_data)))
         return render_template('index.html', sampled_data=sampled_data, total_random_numbers=total_random_numbers)
 
     except Exception as e:
