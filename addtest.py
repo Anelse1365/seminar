@@ -1,3 +1,4 @@
+#สร้าง collection ใหม่
 from flask import Flask
 from pymongo import MongoClient
 
@@ -15,7 +16,7 @@ def home():
 @app.route('/create_collection')
 def create_collection():
     # เลือก collection หรือสร้างใหม่หากยังไม่มี
-    x_collection = mydb['x']
+    x_collection = mydb['']
 
     # เพิ่ม document เข้า collection
     x_collection.insert_one({'x1': 'มานี'})
@@ -24,3 +25,6 @@ def create_collection():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    #http://localhost:5000/create_collection
+    
+    
