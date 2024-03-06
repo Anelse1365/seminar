@@ -15,12 +15,12 @@ def home():
 @app.route('/insert_documents')
 def insert_documents():
     # เลือก collection
-    x_collection = mydb['x']
+    x_collection = mydb['person']
 
     # ข้อมูลที่ต้องการเพิ่ม
     new_data = [
-        {'x1': 'มานะ'},
-        {'x1': 'สมปอง'}
+        {'p1': 'สมปอง'},
+        {'p1': 'อดัม'}
     ]
 
     # เพิ่มข้อมูลใน collection "x"
@@ -34,4 +34,3 @@ def insert_documents():
 
 if __name__ == '__main__':
     app.run(debug=True)
-#http://localhost:5000/insert_documents

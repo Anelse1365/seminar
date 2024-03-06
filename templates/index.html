@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Data</title>
+    <title>Flask Quiz</title>
 </head>
 <body>
-    <h1>Combined Data</h1>
+    <h1>คำถาม</h1>
+    <p><strong>คำถาม:</strong> {{ question }}</p>
 
-    {% for data in sampled_data %}
-        <p>{{ data }}</p>
-    {% endfor %}
+    <h1>คำตอบ</h1>
+    <form method="POST" action="/">
+        <label for="answer">กรอกคำตอบ:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="submit">ตรวจสอบคำตอบ</button>
+    </form>
 
-    <p>ทั้ง 2 มีสัตว์ทั้งหมด: {{ total_random_numbers }} ตัว</p>
+    {% if result %}
+        <h1>ผลลัพธ์</h1>
+        <p>{{ result }}</p>
+    {% endif %}
 </body>
 </html>
