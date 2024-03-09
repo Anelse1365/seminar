@@ -7,19 +7,49 @@
     <title>Flask Quiz</title>
 </head>
 <body>
-    <h1>คำถาม</h1>
-    <p><strong>คำถาม:</strong> {{ question }}</p>
+    <h3>คำถาม 1</h3>
+    <p><strong>คำถาม:</strong> {{ question1 }}</p>
 
-    <h1>คำตอบ</h1>
+    <h3>คำตอบ</h3>
     <form method="POST" action="/">
-        <label for="answer">กรอกคำตอบ:</label>
-        <input type="number" id="answer" name="answer" required>
+        <label for="answer1">กรอกคำตอบ:</label>
+        <input type="number" id="answer1" name="answer1" required>
         <button type="submit">ตรวจสอบคำตอบ</button>
     </form>
 
-    {% if result %}
+    {% if result1 %}
         <h1>ผลลัพธ์</h1>
-        <p>{{ result }}</p>
+        <p>{{ result1 }}</p>
+    {% endif %}
+
+    <h3>คำถาม 2</h3>
+    <p><strong>คำถาม:</strong> {{ question2 }}</p>
+
+    <h3>คำตอบ</h3>
+    <form method="POST" action="/">
+        <label for="answer2">กรอกคำตอบ:</label>
+        <input type="number" id="answer2" name="answer2" required>
+        <button type="submit">ตรวจสอบคำตอบ</button>
+    </form>
+
+    {% if result2 %}
+        <h1>ผลลัพธ์</h1>
+        <p>{{ result2 }}</p>
+    {% endif %}
+
+    <h3>คำถาม 3</h3>
+    <p><strong>คำถาม:</strong> {{question3}}</p>
+
+    <h3>คำตอบ</h3>
+    <form method="POST" action="/">
+        <label for="answer3">กรอกคำตอบ:</label>
+        <input type="number" id="answer3" name="answer3" required>
+        <button type="submit">ตรวจสอบคำตอบ</button>
+    </form>
+
+    {% if result3 %}
+        <h1>ผลลัพธ์</h1>
+        <p>{{ result3 }}</p>
     {% endif %}
 </body>
 </html>
